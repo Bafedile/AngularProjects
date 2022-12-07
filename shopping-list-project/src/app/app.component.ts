@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shopping-list-project';
+  shoppingLists;
+  recipes=true;
+
+
+  getDisplayValue(val: { dis: boolean, type: string }) {
+    if (val.type === "recipe") {
+      this.recipes = val.dis;
+      this.shoppingLists = false;
+    }
+    if (val.type === "shoppinglist") {
+      this.shoppingLists = val.dis;
+      this.recipes= false;
+    }
+  }
 }

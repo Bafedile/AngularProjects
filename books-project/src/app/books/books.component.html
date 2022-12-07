@@ -1,8 +1,19 @@
 <div class="row">
-    <div class="col-md-10">
-        <app-book-list></app-book-list>
+    <div class="col-md-5">
+        <app-book-list [headerSelected]="headerSelected" (selectedBook)="book=$event" [bookAdded]="bookAdded">
+        </app-book-list>
+
     </div>
-    <div class="col-md-2">
-        <app-book-details></app-book-details>
+    <div class="col-md-7">
+        <app-book-details [book]="book" *ngIf="headerSelected !== 'add-book' && book!=null"></app-book-details>
     </div>
 </div>
+<div class="row">
+    <div class="col-md-7">
+        <app-book-edit *ngIf="headerSelected === 'add-book'" (addedBook)="bookAdded = $event"></app-book-edit>
+    </div>
+</div>
+<!--
+    Put the book edit inside the book list 
+
+-->
