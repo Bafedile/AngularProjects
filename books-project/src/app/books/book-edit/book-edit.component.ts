@@ -11,10 +11,10 @@ export class BookEditComponent {
 @ViewChild('descriptionInput')descriptionInput:ElementRef;
 @ViewChild('imagePathInput')imagePathInput:ElementRef;
 
-@Output() addedBook = new EventEmitter<Book>();
+@Output() addedBookEvent = new EventEmitter<Book>();
 
   onAddingBook(){
-    this.addedBook.emit(new Book(this.titleInput.nativeElement.value,this.authorInput.nativeElement.value,
+    this.addedBookEvent.emit(new Book(this.titleInput.nativeElement.value,this.authorInput.nativeElement.value,
       this.descriptionInput.nativeElement.value,this.imagePathInput.nativeElement.value));
   }
 }

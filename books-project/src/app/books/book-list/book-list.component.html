@@ -12,3 +12,4 @@
     </div>
    
 </div>
+<app-book-edit *ngIf="headerSelected === 'add-book'" (addedBookEvent)="addBook($event)" ></app-book-edit>

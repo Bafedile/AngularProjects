@@ -25,18 +25,16 @@ export class BookListComponent {
 
   ];
   @Input() headerSelected: string;
-  @Input() bookAdded: Book;
   @Output() selectedBook = new EventEmitter<Book>();
 
   bookSelected(book: Book) {
     this.selectedBook.emit(book);
   }
+  addBook(book: Book) {
+    this.books.push(book);
+  }
   constructor() {
-    if (this.bookAdded != null) {
-      if (Object.keys(this.bookAdded).length === 0) {
-        this.books.push(this.bookAdded);
-      }
-    }
+
   }
 
 
