@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-md-5">
-        <app-book-list [headerSelected]="headerSelected" (selectedBook)="book=$event" >
+        <app-book-list [headerSelected]="headerSelected">
         </app-book-list>
 
     </div>
     <div class="col-md-7">
-        <app-book-details [book]="book" *ngIf="headerSelected !== 'add-book' && book!=null"></app-book-details>
+        <app-book-details  *ngIf="headerSelected !== 'add-book' && book!=null" [book]="book"></app-book-details>
     </div>
 </div>
 <!-- <div class="row">

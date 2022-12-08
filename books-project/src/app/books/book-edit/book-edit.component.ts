@@ -1,5 +1,6 @@
 import { Component,Output,ElementRef,ViewChild,EventEmitter } from '@angular/core';
 import { Book } from '../book-list/book-item/book.model';
+import { BooksService } from '../books.service';
 @Component({
   selector: 'app-book-edit',
   templateUrl: './book-edit.component.html',
@@ -11,10 +12,10 @@ export class BookEditComponent {
 @ViewChild('descriptionInput')descriptionInput:ElementRef;
 @ViewChild('imagePathInput')imagePathInput:ElementRef;
 
-@Output() addedBookEvent = new EventEmitter<Book>();
+constructor(private booksService:BooksService){}
 
   onAddingBook(){
-    this.addedBookEvent.emit(new Book(this.titleInput.nativeElement.value,this.authorInput.nativeElement.value,
-      this.descriptionInput.nativeElement.value,this.imagePathInput.nativeElement.value));
-  }
+      this.booksService.addBook(new Book(this.titleInput.nativeElement.value,this.authorInput.nativeElement.value,
+        this.descriptionInput.nativeElement.value, this.imagePathInput.nativeElement.value));
+    }
 }

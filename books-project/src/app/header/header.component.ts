@@ -8,6 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class HeaderComponent {
 
   @Output() selectedItemHeader = new EventEmitter<string>();
+  
   onSelected(selectedLink: string) {
     this.selectedItemHeader.emit(selectedLink);
   }

@@ -1,9 +1,9 @@
-<app-header (selectedItemHeader)="selectedHeader = $event "></app-header>
-
+<app-header (selectedItemHeader)="getSelectedHeader($event) "></app-header>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <app-books [headerSelected]="selectedHeader"></app-books>
+          
         </div>
     </div>
 

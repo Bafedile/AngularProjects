@@ -8,6 +8,8 @@ import { BookListComponent } from './books/book-list/book-list.component';
 import { BookEditComponent } from './books/book-edit/book-edit.component';
 import { BookItemComponent } from './books/book-list/book-item/book-item.component';
 import { BookDetailsComponent } from './books/book-details/book-details.component';
+import { MyImageStying } from './myImageStyling/myImageStying.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,10 +18,13 @@ import { BookDetailsComponent } from './books/book-details/book-details.componen
     BookListComponent,
     BookDetailsComponent,
     BookEditComponent,
-    BookItemComponent
+    BookItemComponent,
+    MyImageStying,
+    DropdownDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

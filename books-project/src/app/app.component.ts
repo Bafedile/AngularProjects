@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'books-project';
-  selectedHeader:string = "book-list" ;
+  selectedHeader: string = "book-list";
+
+  getSelectedHeader(header: string) {
+    this.selectedHeader = header;
+  }
 }

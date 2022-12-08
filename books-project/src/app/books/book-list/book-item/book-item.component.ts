@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { BooksService } from '../../books.service';
 import { Book } from './book.model';
 @Component({
   selector: 'app-book-item',
@@ -7,9 +8,11 @@ import { Book } from './book.model';
 })
 export class BookItemComponent {
   @Input() book: Book;
-  @Output() bookSelected = new EventEmitter<void>();
   
+  constructor(private booksService:BooksService){}
+
   selectedBook() {
-    this.bookSelected.emit();
+    this.booksService.bookSelected.emit(this.book);
+    console.log("book emitted");
   }
 }

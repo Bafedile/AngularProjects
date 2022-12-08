@@ -7,5 +7,12 @@ button{
    
 }
 .ctn{
-    margin-left:125px;
+    margin-left:40px;
+}
+
+label{
+    width:100px;
+}
+input[type=text]{
+    width:300px;
 }
