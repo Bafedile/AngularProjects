@@ -13,6 +13,6 @@ export class BookItemComponent {
 
   selectedBook() {
     this.booksService.bookSelected.emit(this.book);
-    console.log("book emitted");
+    
   }
 }

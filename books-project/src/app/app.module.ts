@@ -10,6 +10,22 @@ import { BookItemComponent } from './books/book-list/book-item/book-item.compone
 import { BookDetailsComponent } from './books/book-details/book-details.component';
 import { MyImageStying } from './myImageStyling/myImageStying.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { BooksService } from './books/books.service';
+import { Routes, RouterModule } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+const appRoutes: Routes = [
+  {
+    path: 'books', component: BooksComponent, children: [
+      { path: 'book_details', component: BookDetailsComponent }]
+  },
+  {
+    path: 'add_book', component: BookEditComponent
+  },
+  { path: 'not-found', component: PageNotFoundComponent },
+  { path: '**', redirectTo: '/not-found' }
+
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,13 +36,14 @@ import { DropdownDirective } from './shared/dropdown.directive';
     BookEditComponent,
     BookItemComponent,
     MyImageStying,
-    DropdownDirective
+    DropdownDirective,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-   
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [BooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

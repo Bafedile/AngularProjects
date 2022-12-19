@@ -1,0 +1,27 @@
+{
+    "accentImage": [{
+        "Url": "https://www.gstatic.com/ninja/static/sampleDataImages/brandAwareness/vorato/red.png"
+    }, {
+        "Url": "https://www.gstatic.com/ninja/static/sampleDataImages/brandAwareness/vorato/black.png"
+    }],
+    "backgroundColor": "rgb(232, 232, 232)",
+    "callToAction": [{
+        "content": {
+            "text": "DRIVE NOW",
+            "style": {
+                "color": "rgb(255, 255, 255)"
+            }
+        },
+        "buttonColor": "rgb(0, 0, 0)",
+        "exitUrl": "https://google.com"
+    }],
+    "logo": {
+        "Url": "https://www.gstatic.com/ninja/static/sampleDataImages/brandAwareness/vorato/logo.png"
+    },
+    "primaryStyle": {
+        "color": "rgb(255, 255, 255)"
+    },
+    "secondaryStyle": {
+        "color": "rgb(130, 130, 130)"
+    }
+}

@@ -1,19 +1,19 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a href="#" class="navbar-brand">Awesome Books</a>
+            <a routerLink="/books" class="navbar-brand">Awesome Books</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#" (click)="onSelected('book-list')">Book List</a></li>
-                <li><a href="#" (click)="onSelected('add-book')">Add a Book</a></li>
+                <li routerLinkActive="active"><a routerLink="books"  (click)="onSelected('book-list')">Book List</a></li>
+                <li  routerLinkActive="active" ><a routerLink="add_book" (click)="onSelected('add-book')">Add a Book</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown" appDropdown>
-                    <a href="#" role="button" class="dropdown-toggle">Manage<span class="caret"></span></a>
+                    <a routerLink="/books" role="button" class="dropdown-toggle">Manage<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Save Data</a></li>
-                        <li><a href="#">Fetch Data</a></li>
+                        <li><a routerLink="/books">Save Data</a></li>
+                        <li><a routerLink="/books">Fetch Data</a></li>
                     </ul>
                 </li>
             </ul>

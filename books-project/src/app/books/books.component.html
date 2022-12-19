@@ -4,8 +4,10 @@
         </app-book-list>
 
     </div>
-    <div class="col-md-7">
-        <app-book-details  *ngIf="headerSelected !== 'add-book' && book!=null" [book]="book"></app-book-details>
+    <div class="col-md-7" *ngIf="headerSelected !== 'add-book' " >
+        <!-- <app-book-details  ></app-book-details>
+         -->
+         <router-outlet ></router-outlet>
     </div>
 </div>
 <!-- <div class="row">

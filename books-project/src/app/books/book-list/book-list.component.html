@@ -1,20 +1,13 @@
-<div class="row" *ngIf="headerSelected === 'book-list', else goToOther ">
+<div class="row" *ngIf="headerSelected === 'book-list' ">
     <div class="col-xs-12">
-        <button class="btn btn-success">New Book</button>
+        <button class="btn btn-success" (click)="loadToAddBook()">New Book</button>
         <hr>
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <app-book-item *ngFor="let book of books" [book]="book"></app-book-item>
+            <app-book-item *ngFor="let bookElement of books" [book]="bookElement"></app-book-item>
             <hr>
         </div>
     </div>
    
 </div>
-<ng-template #goToOther>
-    <div class="row"  >
-        <div class="col-xs-12">
-            <app-book-edit></app-book-edit>
-        </div>
-    </div>
-</ng-template>

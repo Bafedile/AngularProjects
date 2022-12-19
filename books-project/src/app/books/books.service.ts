@@ -23,7 +23,7 @@ export class BooksService {
     ];
 
     booksEmitter = new EventEmitter<Book[]>();
-
+    headerSelected = new EventEmitter<string>();
     bookSelected = new EventEmitter<Book>();
 
     addBook(book: Book) {
@@ -32,10 +32,11 @@ export class BooksService {
     }
     deleteBook(book: Book) {
         for (let b of this.books) {
-            if (b === book) {
-                this.books.slice(1,1); // delete a book 
+            if ((b.author === book.author) && (b.title === book.title)) {
+                this.books.splice(this.books.indexOf(b),1);
             }
         }
+        this.booksEmitter.emit(this.books.slice());
     }
 
     getBooks() {

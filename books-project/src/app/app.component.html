@@ -1,10 +1,13 @@
-<app-header (selectedItemHeader)="getSelectedHeader($event) "></app-header>
+<app-header></app-header>
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <app-books [headerSelected]="selectedHeader"></app-books>
-          
+        <div class="col-xs-12">
+            <!-- <app-books></app-books>-->
+           <router-outlet></router-outlet>
         </div>
+        <!-- <div class="col-md-8">
+            <router-outlet></router-outlet>
+        </div>  -->
     </div>
 
 </div>

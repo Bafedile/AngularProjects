@@ -1,0 +1,23 @@
+input {
+    width: 100%;
+}
+
+form {
+    width: 400px;
+}
+
+button {
+    padding: 8px;
+}
+
+.row {
+    margin-left: 10%;
+}
+
+span {
+    color: red;
+}
+
+.input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+    border: 1px solid red;
+}

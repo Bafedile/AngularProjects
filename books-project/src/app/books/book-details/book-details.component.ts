@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { Book } from '../book-list/book-item/book.model';
 import { BooksService } from '../books.service';
 
@@ -8,14 +8,20 @@ import { BooksService } from '../books.service';
   styleUrls: ['./book-details.component.css']
 })
 export class BookDetailsComponent implements OnInit {
-  @Input() book: Book;
-  constructor(private booksService: BooksService) { }
-  ngOnInit() {
-    console.log("book called");
+book: Book = {title:'',author:'',description:'',imagePath:''};
 
+
+  constructor(private booksService: BooksService) {
   }
+
+  ngOnInit() {
+   
+    this.booksService.bookSelected.subscribe((book) => { this.book = book });
+  }
+  
 
   deleteBook() {
     this.booksService.deleteBook(this.book);
+    // this.booksService.bookSelected.subscribe((book)=>{this.book = book});
   }
 }

@@ -1,37 +1,41 @@
-<div class="row">
-    <div class="col-xs-12">
-        <img src="{{ book.imagePath  }}" alt="" class="img-responsive" myImageStying>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-12">
-        <h1>{{ book.title }}</h1>
-        <h3>{{ book.author }}</h3>
-        <article>
-            <hr><h4><b>Description</b></h4><hr>
-            <section>
-                {{ book.description }}
-            </section>
-        </article>
-        <hr>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12">
-        <div class="btn-group" appDropdown>
-            <button type="button" class="btn btn-primary dropdown-toggle">Manage Books<span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="#">Edit Book</a></li>
-                <li><a href="#" (click)="deleteBook()">Delete Book</a></li>
-            </ul>
+<div *ngIf="book.title.length !== 0 ">
+    <div class="row">
+        <div class="col-xs-12">
+            <img src="{{ book.imagePath  }}" alt="" class="img-responsive" myImageStying>
         </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-xs-12">
-        
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>{{ book.title }}</h1>
+            <h3>{{ book.author }}</h3>
+            <article>
+                <hr>
+                <h4><b>Description</b></h4>
+                <hr>
+                <section>
+                    {{ book.description }}
+                </section>
+            </article>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="btn-group" appDropdown>
+                <button type="button" class="btn btn-primary dropdown-toggle">Manage Books<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Edit Book</a></li>
+                    <li><a href="#" (click)="deleteBook()">Delete Book</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+
+        </div>
     </div>
 </div>

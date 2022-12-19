@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { BooksService } from '../books/books.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
 
-  @Output() selectedItemHeader = new EventEmitter<string>();
-  
+  constructor(private booksService:BooksService){}
+
+
   onSelected(selectedLink: string) {
-    this.selectedItemHeader.emit(selectedLink);
+    this.booksService.headerSelected.emit(selectedLink);
   }
 }

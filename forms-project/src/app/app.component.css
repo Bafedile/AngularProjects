@@ -1,0 +1,25 @@
+form {
+    margin:20% 0% 0% 0%;
+    width: 400px;
+}
+
+input {
+    width: 100%;
+}
+button{
+    margin-left: 80%;
+}
+select{
+    margin-left:53px; 
+    width:190px;
+}
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+#p{
+    color:red;
+}
+.user{
+    width:400px;
+    margin-top:5%;
+}
